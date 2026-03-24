@@ -1,4 +1,4 @@
-# app.py (リセット時刻基準でデータ自動フィルタリング - 温度グラフ対応版test
+# app.py (リセット時刻基準でデータ自動フィルタリング - 温度グラフ対応版
 from flask import Flask, request, jsonify, render_template
 import requests
 from datetime import datetime, timezone, timedelta
@@ -13,7 +13,7 @@ logging.basicConfig(filename=LOG_FILE_PATH, level=logging.INFO,
 app = Flask(__name__)
 
 # 機器番号とThingspeakの情報をマッピングする辞書
-# 🚨 必ず YOUR_..._WRITE_API_KEY を実際の書き込みキーに置き換えてください。
+# 必ず YOUR_..._WRITE_API_KEY を実際の書き込みキーに置き換える。
 device_mapping = {
     "device_A1": {
         "channel_id": "2984916",
@@ -126,7 +126,7 @@ def get_data():
         latest_feed = filtered_feeds[-1] # フィルタリング後の最新データ
         
         graph_labels = []
-        graph_temp_data = [] # ★温度データ用に変数名を変更★
+        graph_temp_data = [] # 温度データ用に変数名を変更
 
         for f in filtered_feeds:
             # Field 1 (温度) のデータが存在する場合、グラフデータとして抽出
@@ -151,7 +151,7 @@ def get_data():
             "status": status_text,
             "count": latest_feed.get('field3', 'N/A'),
             "graph_labels": graph_labels,
-            "graph_data": graph_temp_data # ★温度のグラフデータを返す★
+            "graph_data": graph_temp_data # 温度のグラフデータを返す
         })
 
     except requests.exceptions.RequestException as e:
