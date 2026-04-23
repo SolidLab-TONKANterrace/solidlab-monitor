@@ -14,16 +14,12 @@ app = Flask(__name__)
 
 # 機器番号とThingspeakの情報をマッピングする辞書
 # 必ず YOUR_..._WRITE_API_KEY を実際の書き込みキーに置き換える。
+# app.py のここを書き換える
 device_mapping = {
-    "device_A1": {
-        "channel_id": "2984916",
-        "read_api_key": "H8F1OIM9U1NLQE3M",
-        "write_api_key": "U9Q595H3CM8DYM6O" 
-    },
-    "device_B2": {
-        "channel_id": "2874643",
-        "read_api_key": "3L8GCQ6QQRJD9R2R",
-        "write_api_key": "6EGN0UCAEN0NR9KG"
+    "device_A1": { 
+        "channel_id": "3338394",       # あなたの ID にする
+        "read_api_key": "（あなたの Read API Key）", # ThingSpeakのAPI Keysタブで確認
+        "write_api_key": "XDN11DIUABAHGOVZ"  # あなたの Write API Key
     }
 }
 
