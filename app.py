@@ -18,7 +18,7 @@ app = Flask(__name__)
 device_mapping = {
     "device_A1": { 
         "channel_id": "3338394",       # あなたの ID にする
-        "read_api_key": "（あなたの Read API Key）", # ThingSpeakのAPI Keysタブで確認
+        "read_api_key": "LM8LHB5YH94G5YVJ", # ThingSpeakのAPI Keysタブで確認
         "write_api_key": "XDN11DIUABAHGOVZ"  # あなたの Write API Key
     }
 }
